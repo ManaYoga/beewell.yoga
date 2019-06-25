@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title><%= @site_domain %> Chain Web App</title>
+    
+    <meta name="author" content="<%= @site_domain %>">
+    <meta name="description" content="<%= @site_domain %> Chain Web App">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="<%= @site_domain %>">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+
+    <link rel="apple-touch-icon" sizes="120x120" href="https://can.<%= @site_domain %>/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://can.<%= @site_domain %>/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://can.<%= @site_domain %>/favicon-16x16.png">
+    <link rel="manifest" href="https://can.<%= @site_domain %>/manifest.json">
+    <meta name="application-name" content="<%= @site_domain %>">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="canonical" href="//<%= @site_domain %>">
+    <link rel="mask-icon" href="https://can.<%= @site_domain %>/safari-pinned-tab.svg">
+    <link href="https://can.<%= @site_domain %>/style.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+
+  <main style="font-size: 1.1em;">
+  <%= render @view_module, @view_template, assigns %>
+  </main>
+  
+  <footer style="font-size: .8em; line-height:1.4; border: 1px white solid; padding: 10px; text-align: center;">
+    <dl>
+    <dt><strong>Yoga</strong></dt>
+    <hr style="padding: 10px;">
+    <dd>Hindu philosophy and belief system originating in India; using breath control, meditation, and physical discipline</dd>
+    <dd>Exercise modality done with body weight on the floor</dd>
+    <dd>Theraputic tool used in treatment of various conditions</dd>
+    <dd>Lifestyle focused on present moment awareness, embodiment, mental clarity, and liberation</dd>
+    </dl>
+  </footer>
+
+  </body>
+</html>
