@@ -1,0 +1,18 @@
+before_install:
+  - sudo apt-get update
+install:
+  - sudo apt-get install -y python-pip
+  - sudo pip install --upgrade setuptools
+  - sudo pip install gigalixir
+script:
+  - gigalixir login -e "$GIGALIXIR_EMAIL" -p "$GIGALIXIR_PASSWORD" -y
+  - rm -r .git --force
+  - git init
+  - git add *
+  - git commit -m "$SITE_DOMAIN"
+  - gigalixir git:remote $GIGALIXIR_APP_NAME
+  - git push -f gigalixir HEAD:refs/heads/master
+language: elixir
+elixir: 1.5.1
+otp_release: 20.0
+dist: xenial
