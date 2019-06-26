@@ -13,8 +13,8 @@ config :beewellyoga, BeewellyogaWeb.Endpoint,
   load_from_system_env: true,
   http: [port: {:system, "PORT"}], # Needed for Phoenix 1.2 and 1.4. Doesn't hurt for 1.3.
   server: true, # Without this line, your app will not start the web server!
-  secret_key_base: "${SECRET_KEY_BASE}",
-  url: [host: "${APP_NAME}.gigalixirapp.com", port: 443],
+  secret_key_base: System.get_env("SECRET_KEY_BASE"),
+  url: [host: "www.beewell.yoga", port: 443],
   force_ssl: [hsts: true]
 
 # Do not print debug messages in production
@@ -49,8 +49,8 @@ config :logger, level: :info
 # We also recommend setting `force_ssl` in your endpoint, ensuring
 # no data is ever sent via http, always redirecting to https:
 #
-#  config :beewellyoga, BeewellyogaWeb.Endpoint,
-#   force_ssl: [hsts: true]
+  config :beewellyoga, BeewellyogaWeb.Endpoint,
+   force_ssl: [hsts: true]
 #
 # Check `Plug.SSL` for all available options in `force_ssl`.
 
