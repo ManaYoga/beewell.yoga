@@ -10,6 +10,7 @@ script:
   - git init
   - git add *
   - git commit -m "$SITE_DOMAIN"
+  - gigalixir config:set STRIPE_SECRET=$STRIPE_SECRET -a $GIGALIXIR_APP_NAME
   - gigalixir git:remote $GIGALIXIR_APP_NAME
   - git push -f gigalixir HEAD:refs/heads/master
 language: elixir
