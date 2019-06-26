@@ -11,12 +11,19 @@ use Mix.Config
 # before starting your production server.
 config :beewellyoga, BeewellyogaWeb.Endpoint,
   url: [host: "www.beewell.yoga", port: 443],
-  cache_static_manifest: "priv/static/cache_manifest.json",
   secret_key_base: Map.fetch!(System.get_env(), "SECRET_KEY_BASE"),
   server: true
 
 # Do not print debug messages in production
 config :logger, level: :info
+
+config :libcluster,
+  topologies: [
+    k8s_example: [
+      strategy: Cluster.Strategy.Kubernetes,
+      config: [
+        kubernetes_selector: "${LIBCLUSTER_KUBERNETES_SELECTOR}",
+        kubernetes_node_basename: "${LIBCLUSTER_KUBERNETES_NODE_BASENAME}"]]]
 
 # ## SSL Support
 #
