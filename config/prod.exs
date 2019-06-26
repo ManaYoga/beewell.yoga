@@ -10,20 +10,12 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :beewellyoga, BeewellyogaWeb.Endpoint,
-  url: [host: "www.beewell.yoga", port: 80],
+  url: [host: "teeming-excitable-australianfreshwatercrocodile.gigalixirapp.com", port: 80],
   secret_key_base: Map.fetch!(System.get_env(), "SECRET_KEY_BASE"),
   server: true
 
 # Do not print debug messages in production
 config :logger, level: :info
-
-config :libcluster,
-  topologies: [
-    k8s_example: [
-      strategy: Cluster.Strategy.Kubernetes,
-      config: [
-        kubernetes_selector: "${LIBCLUSTER_KUBERNETES_SELECTOR}",
-        kubernetes_node_basename: "${LIBCLUSTER_KUBERNETES_NODE_BASENAME}"]]]
 
 # ## SSL Support
 #
@@ -54,8 +46,8 @@ config :libcluster,
 # We also recommend setting `force_ssl` in your endpoint, ensuring
 # no data is ever sent via http, always redirecting to https:
 #
-  config :beewellyoga, BeewellyogaWeb.Endpoint,
-   force_ssl: [hsts: true]
+#  config :beewellyoga, BeewellyogaWeb.Endpoint,
+#   force_ssl: [hsts: true]
 #
 # Check `Plug.SSL` for all available options in `force_ssl`.
 
