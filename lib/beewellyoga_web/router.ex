@@ -25,10 +25,16 @@ defmodule BeewellyogaWeb.Router do
     get "/", PageController, :success
   end
 
-  scope "/cancelled", BeewellyogaWeb do
+  scope "/canceled", BeewellyogaWeb do
     pipe_through :browser
 
-    get "/", PageController, :cancelled
+    get "/", PageController, :canceled
+  end
+
+  scope "/checkout", BeewellyogaWeb do
+    pipe_through :browser
+
+    get "/", PageController, :checkout
   end
 
   # Other scopes may use custom stacks.

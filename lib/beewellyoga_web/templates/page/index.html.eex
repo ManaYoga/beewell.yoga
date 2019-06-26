@@ -1,73 +1,29 @@
-<figure>
+<figure style="margin:0;">
 <img src="https://can.beewell.yoga/middle.profile.png" alt="Ayla Benjamin Portrait" />
-<figcaption><em>Ayla Bee</em></figcaption>
+<figcaption><em>Ayla 'B' Benjamin</em></figcaption>
 </figure>
 
-<h2>Hii! Welcome to my page &#x2728</h2>
+<h1>Hii! Welcome to my page &#x2728</h1>
 
-<p>Over the last few years I've been bringing yoga inside a maximum security prison.</p>  
-<p>While teaching yoga "inside" I witnessed how even with no material resources, no privacy, no personal space and limited mobility it is possible to develop a yoga practice.</p>
+<p>Over the last few years I've been bringing yoga inside Salinas Valley State Prison, a level-4 maximum security prison in California.</p>  
+<p>While teaching yoga "inside" I witnessed how even with few material resources, virtually no privacy or personal space and limited mobility it is possible to develop a yoga practice.</p>
 <p>Now I'm writing a book about the yoga program and principles used inside the prison!</p>
 <p>An accessible resource:</p>
-<ul>
-<li>shareable</li>
-<li>transportable</li>
-<li>easy to digest and, importantly</li>
-<li>possible to be circulated <em>back</em> into the prison system.</li>
+<ul style="list-style:none;padding:0;">
+<li><h3>shareable</h3></li>
+<li><h3>transportable</h3></li>
+<li><h3>easy to digest</h3> and, importantly</li>
+<li><h4>possible to be circulated <em>back</em> into the prison system.</h4></li>
 </ul>
-<p>Please support this resource by contributing below <3</p>
+<p>An accessible, adaptable and easy to do yoga practice has the potential to benefit many; including the 2.3 million Americans currently incarcerated in the USA. <a target="_blank" href="https://www.bjs.gov/content/pub/pdf/cpus16.pdf">Bureau of Justice Statistics</a></p>
+<h2>Please support this endeavor by contributing below <3</h2>
 
-<section id="contribute" style="text-align: center; margin: 20px;">
-<script src="https://js.stripe.com/v3"></script>
-
-<button
-  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-  id="checkout-button-sku_FK2LlZXSOIIH2W"
-  role="link"
->
-  Contribute $10
-</button>
-<button
-  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-  id="checkout-button-sku_FK2N1FxA90nCK9"
-  role="link"
->
-  Contribute $100
-</button>
-<button
-  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-  id="checkout-button-sku_FK2Oj6qiile0Ah"
-  role="link"
->
-  Contribute $400
-</button>
-
-<div id="error-message"></div>
-</section>
-
-<script>
-  var stripe = Stripe('pk_live_brbnkexKijAIf5gxInl4CBgc00IzBRdphg');
-
-  function checkoutButtonRedirectToCheckout(sku) {
-    stripe.redirectToCheckout({
-      items: [{sku: sku, quantity: 1}],
-
-      successUrl: 'https://www.beewell.yoga/success',
-      cancelUrl: 'https://www.beewell.yoga/cancel',
-      submitType: 'donate'
-    })
-    .then(function (result) {
-      if (result.error) {
-        var displayError = document.getElementById('error-message');
-        displayError.textContent = result.error.message;
-      }
-    });
-  }
-
-  var checkoutButton010 = document.getElementById('checkout-button-sku_FK2LlZXSOIIH2W');
-  var checkoutButton100 = document.getElementById('checkout-button-sku_FK2N1FxA90nCK9');
-  var checkoutButton400 = document.getElementById('checkout-button-sku_FK2Oj6qiile0Ah');
-  checkoutButton010.addEventListener('click', function () {checkoutButtonRedirectToCheckout('sku_FK2LlZXSOIIH2W');});
-  checkoutButton100.addEventListener('click', function () {checkoutButtonRedirectToCheckout('sku_FK2N1FxA90nCK9');});
-  checkoutButton400.addEventListener('click', function () {checkoutButtonRedirectToCheckout('sku_FK2Oj6qiile0Ah');});
-</script>
+<form id="contribute" action="/checkout" style="font-size: 2.618em; text-align: center; margin: 40px 0;">
+<div style="position:relative;">
+<span style="position:absolute;padding:10px;">$</span>
+<input style="padding-left:20px;display:inline-block;text-align:center;width:2.618em;height:1.618em;" required type="number" name="contribution" min="2" max="999" value="20" />
+</div>
+<input style="display:inline-block;" type="submit" value="Contribute" />
+</form>
+<h3>Thank you,</h3>
+<p><em>AB</em><br/><a href="#">beewell.yoga</a></p>

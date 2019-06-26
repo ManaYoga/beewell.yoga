@@ -20,6 +20,8 @@ config :beewellyoga, BeewellyogaWeb.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
+config :stripity_stripe, api_key: System.get_env("STRIPE_SECRET")
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key

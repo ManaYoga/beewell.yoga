@@ -28,13 +28,13 @@
   </head>
   <body>
 
-  <main style="font-size: 1.1em; text-align: center;">
+  <main style="font-size: 1.2em; text-align: center; line-height:1.618;min-height:50vh;">
   <%= render @view_module, @view_template, assigns %>
   </main>
   
   <footer style="font-size: .8em; line-height:1.618; border: 1px white solid; padding: 8px 20px;">
     <dl>
-    <dt><strong>Yoga</strong><br/><em>yo·​ga | \ ˈyō-gə \</em></dt>
+    <dt><strong>Yoga</strong><br/><em style="padding-left:10px;">yo·​ga | \ ˈyō-gə \</em></dt>
     <hr style="margin: 12px;">
     <dd style="margin: 2px 0 4px 0;">Hindu philosophy and belief system originating in India; using breath control, meditation, and physical discipline</dd>
     <dd style="margin: 2px 0 4px 0;">Exercise modality done with body weight on the floor</dd>
