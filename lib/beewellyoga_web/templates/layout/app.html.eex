@@ -28,18 +28,18 @@
   </head>
   <body>
 
-  <main style="font-size: 1.1em;">
+  <main style="font-size: 1.1em; text-align: center;">
   <%= render @view_module, @view_template, assigns %>
   </main>
   
-  <footer style="font-size: .8em; line-height:1.4; border: 1px white solid; padding: 10px; text-align: center;">
+  <footer style="font-size: .8em; line-height:1.618; border: 1px white solid; padding: 8px 20px;">
     <dl>
-    <dt><strong>Yoga</strong></dt>
-    <hr style="padding: 10px;">
-    <dd>Hindu philosophy and belief system originating in India; using breath control, meditation, and physical discipline</dd>
-    <dd>Exercise modality done with body weight on the floor</dd>
-    <dd>Theraputic tool used in treatment of various conditions</dd>
-    <dd>Lifestyle focused on present moment awareness, embodiment, mental clarity, and liberation</dd>
+    <dt><strong>Yoga</strong><br/><em>yo·​ga | \ ˈyō-gə \</em></dt>
+    <hr style="margin: 12px;">
+    <dd style="margin: 2px 0 4px 0;">Hindu philosophy and belief system originating in India; using breath control, meditation, and physical discipline</dd>
+    <dd style="margin: 2px 0 4px 0;">Exercise modality done with body weight on the floor</dd>
+    <dd style="margin: 2px 0 4px 0;">Theraputic tool used in treatment of various conditions</dd>
+    <dd style="margin: 2px 0 4px 0;">Lifestyle focused on present moment awareness, embodiment, mental clarity, and liberation</dd>
     </dl>
   </footer>
 
