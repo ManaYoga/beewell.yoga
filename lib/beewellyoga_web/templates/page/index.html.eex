@@ -1,9 +1,9 @@
 <img src="https://can.beewell.yoga/middle.profile.png" alt="Ayla Benjamin Portrait" />
-<h1>Hii! My name is Ayla 'Bee' Benjamin. Welcome &#x2728</h1>
+<h2>Hii! My name is Ayla 'Bee' Benjamin. Welcome &#x2728</h2>
 
-<p>Over the last few years I've been bringing yoga inside a maximum security prison and now I'm writing a book about my experience.</p>  
+<p>Over the last few years I've been bringing yoga inside a maximum security prison.</p>  
 <p>While teaching yoga "inside" I witnessed how even with no material resources, no privacy, no personal space and limited mobility it is possible to develop a yoga practice.</p>
-<p>The yoga program and principles used inside the prison are what I'm developing into a pocket sized paperback book.</p>
+<p>Now I'm writing a book about the yoga program and principles used inside the prison!</p>
 <p>An accessible resource:</p>
 <ul>
 <li>shareable</li>
@@ -21,21 +21,21 @@
   id="checkout-button-sku_FK2LlZXSOIIH2W"
   role="link"
 >
-  Donate $10
+  Contribute $10
 </button>
 <button
   style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
   id="checkout-button-sku_FK2N1FxA90nCK9"
   role="link"
 >
-  Donate $100
+  Contribute $100
 </button>
 <button
   style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
   id="checkout-button-sku_FK2Oj6qiile0Ah"
   role="link"
 >
-  Donate $400
+  Contribute $400
 </button>
 
 <div id="error-message"></div>
