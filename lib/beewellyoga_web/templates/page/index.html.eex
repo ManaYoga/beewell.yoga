@@ -21,7 +21,7 @@
 <form id="contribute" action="/checkout" style="font-size: 2.618em; text-align: center; margin: 40px 0;">
 <div style="position:relative;">
 <span style="position:absolute;padding:10px;">$</span>
-<input style="padding-left:20px;display:inline-block;text-align:center;width:2.618em;height:1.618em;" required type="number" name="contribution" min="2" max="999" value="0" />
+<input style="padding-left:40px;display:inline-block;text-align:center;width:2.618em;height:1.618em;" required type="number" name="contribution" min="2" max="999" value="0" />
 </div>
 <input style="display:inline-block;" type="submit" value="Contribute" />
 </form>
