@@ -23,6 +23,6 @@
 <span style="position:absolute;padding:10px;">$</span>
 <input style="padding-left:20px;display:inline-block;text-align:center;width:2.618em;height:1.618em;" required type="number" name="contribution" min="2" max="999" value="0" />
 </div>
-<input style="display:inline-block;text-decoration:underline;" type="submit" value="Contribute" />
+<input style="display:inline-block;text-decoration:underline;" type="submit" value="Invest" />
 </form>
   
