@@ -15,15 +15,13 @@
 <li><h3>easy to digest</h3> and, importantly</li>
 <li><h4>possible to be circulated <em>back</em> into the prison system.</h4></li>
 </ul>
-<p>An accessible, adaptable and easy to do yoga practice has the potential to benefit many; including the 2.3 million Americans currently incarcerated in the USA. <a target="_blank" href="https://www.bjs.gov/content/pub/pdf/cpus16.pdf">Bureau of Justice Statistics</a></p>
+<p>An accessible, adaptable and easy to do yoga practice has the potential to benefit many; including the 2.3 million Americans currently incarcerated in the USA. (<a target="_blank" href="https://www.bjs.gov/content/pub/pdf/cpus16.pdf">Bureau of Justice Statistics</a>)</p>
 <h2>Please support this endeavor by contributing below <3</h2>
 
 <form id="contribute" action="/checkout" style="font-size: 2.618em; text-align: center; margin: 40px 0;">
 <div style="position:relative;">
 <span style="position:absolute;padding:10px;">$</span>
-<input style="padding-left:20px;display:inline-block;text-align:center;width:2.618em;height:1.618em;" required type="number" name="contribution" min="2" max="999" value="20" />
+<input style="padding-left:20px;display:inline-block;text-align:center;width:2.618em;height:1.618em;" required type="number" name="contribution" min="2" max="999" value="0" />
 </div>
 <input style="display:inline-block;" type="submit" value="Contribute" />
 </form>
-<h3>Thank you,</h3>
-<p><em>AB</em><br/><a href="#">beewell.yoga</a></p>
