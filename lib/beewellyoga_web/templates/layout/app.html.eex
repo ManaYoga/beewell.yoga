@@ -27,6 +27,12 @@
     <link href="https://can.<%= @site_domain %>/style.css" rel="stylesheet" type="text/css" media="all">
   </head>
   <body>
+    
+    <style>
+    a[href^='mailto']::before {
+      content: '💌 ';
+    }
+    </style>
 
   <main style="font-size: 1.2em; text-align: center; line-height:1.618;min-height:50vh;">
   <%= render @view_module, @view_template, assigns %>
