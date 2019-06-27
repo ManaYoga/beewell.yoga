@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title><%= @site_domain %> Chain Web App</title>
+    <title>Bee Well Yoga</title>
     
-    <meta name="author" content="<%= @site_domain %>">
-    <meta name="description" content="<%= @site_domain %> Chain Web App">
+    <meta name="author" content="Ayla Bee">
+    <meta name="description" content="Ayla Benjamin is a creative visionary, experienced yoga teacher, meditation evangelist, prolific speaker, social justice driven entrepreneur, and lifelong student">
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="mobile-web-app-capable" content="yes">
