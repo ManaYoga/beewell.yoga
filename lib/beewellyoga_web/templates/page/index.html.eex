@@ -165,7 +165,6 @@ window.addEventListener("load", function () {
     var FD = new FormData(form);
 
     XHR.addEventListener("load", function(event) {
-    console.log(event.target);
       beewellRedirectToCheckout(event.target.response.stripe_checkout_session_id);
     });
 
@@ -198,10 +197,15 @@ window.addEventListener("load", function () {
     }
   });   
   }
+  
+  function setPrice(price) {
+        document.getElementById("price").setAttribute("value",amt);
+        document.getElementById("donatebtn").focus();
+    }
 </script>
 
 <footer id="actionbar">
-<h2>Donate to Bee Well's <strong>yoga book for prisons</strong></h2>
+<h2>Support Ayla's <strong>Yoga Book for Prisons</strong></h2>
 <form id="contribute" method="post" accept-charset="utf-8" autocomplete="off">
 <input type="hidden" name="name" value="Yoga Book Support">
 <label for="price">$ </label>
