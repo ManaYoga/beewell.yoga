@@ -2,7 +2,7 @@ defmodule BeewellyogaWeb.PageController do
   use BeewellyogaWeb, :controller
 
   def index(conn, _params) do
-    render(conn, "index.html", site_domain: "beewell.yoga")
+    render(conn, "index.html", site_domain: "beewell.yoga", stripe_publishable_key: "pk_live_brbnkexKijAIf5gxInl4CBgc00IzBRdphg")
   end
 
   def success(conn, _params) do
@@ -26,6 +26,6 @@ defmodule BeewellyogaWeb.PageController do
     cancel_url: "https://www.beewell.yoga/cancel",
     submit_type: "donate"
     })
-    render(conn, "checkout.html", site_domain: "beewell.yoga", stripe_publishable_key: "pk_live_brbnkexKijAIf5gxInl4CBgc00IzBRdphg", stripe_checkout_session_id: session.id)
+    json(conn, %{stripe_checkout_session_id: session.id})
   end
 end

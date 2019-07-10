@@ -32,9 +32,9 @@ defmodule BeewellyogaWeb.Router do
   end
 
   scope "/checkout", BeewellyogaWeb do
-    pipe_through :browser
+    pipe_through :api
 
-    get "/", PageController, :checkout
+    post "/", PageController, :checkout
   end
 
   # Other scopes may use custom stacks.

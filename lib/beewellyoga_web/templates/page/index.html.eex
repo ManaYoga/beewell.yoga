@@ -18,11 +18,193 @@
 <p>An accessible, adaptable and easy to do yoga practice has the potential to benefit many... including the 2.3 million Americans currently incarcerated in the USA. (<a target="_blank" href="https://www.bjs.gov/content/pub/pdf/cpus16.pdf">Bureau of Justice Statistics</a>)</p>
 <h2>Please support this endeavor by contributing below <3</h2>
 
-<form id="contribute" action="/checkout" style="font-size: 2.618em; text-align: center; margin: 40px 0;">
-<div style="position:relative;">
-<span style="position:absolute;padding:10px;">$</span>
-<input style="padding-left:20px;display:inline-block;text-align:center;width:2.618em;height:1.618em;" required type="number" name="contribution" min="2" max="999" value="0" />
-</div>
-<input style="display:inline-block;text-decoration:underline;" type="submit" value="Invest" />
+<style>
+#actionbar {
+    position: fixed;
+    z-index: 50;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1em;
+    text-align: center;
+    background: #33333a;
+    box-shadow: 0 -1px 10px rgba(0,0,0,.7)
+}
+
+#actionbar>h2 {
+    margin: 0 0 .75em;
+    font-size: 1.15em;
+    font-weight: 400
+}
+
+#actionbar label {
+    font-size: 1.4em
+}
+
+#actionbar input[type=text] {
+    position: relative;
+    font-family: source sans pro,trebuchet ms,sans-serif;
+    font-size: 1.4em;
+    color: #999;
+    padding: .25em .5em;
+    border: none;
+    border-radius: 4px
+}
+
+#actionbar input[type=text]:focus {
+    outline: none;
+    box-shadow: 0 0 6px #53e891
+}
+
+#actionbar input[type=text]:invalid {
+    background-color: #ffdedb
+}
+
+#actionbar input[type=submit] {
+    position: relative;
+    top: -1px;
+    font-family: source sans pro,trebuchet ms,sans-serif;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(255,255,255,.8);
+    background-color: #4ed888;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 .15em #379960;
+    padding: .2em .5em .15em;
+    cursor: pointer
+}
+
+#actionbar input[type=submit]:hover {
+    background-color: #53e891
+}
+
+#actionbar input[type=submit]:focus {
+    outline: none;
+    background-color: #53e891
+}
+
+#actionbar input[type=submit]:active {
+    outline: none;
+    top: .1em;
+    top: calc(.1em - 1px);
+    box-shadow: 0 .05em #379960
+}
+
+span.iwrap {
+    position: relative;
+    display: inline-block;
+    margin-right: .5em
+}
+
+span.iwrap>input+div {
+    display: none;
+    position: absolute;
+    z-index: 75;
+    left: -25%;
+    right: -25%;
+    bottom: 115%;
+    padding: .3em 0 0 .3em;
+    font-size: .75em;
+    background: #379960;
+    border-radius: 6px
+}
+
+span.iwrap>input+div::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 48%;
+    left: calc(50% - .75em);
+    width: 0;
+    height: 0;
+    border-top: .75em solid #379960;
+    border-left: .75em solid transparent;
+    border-right: .75em solid transparent
+}
+
+span.iwrap>input+div::after {
+    content: '';
+    display: table;
+    clear: both
+}
+
+span.iwrap>input+div>a {
+    box-sizing: border-box;
+    display: list-item;
+    list-style: none;
+    width: 46%;
+    width: calc(50% - .3em);
+    float: left;
+    background: #4ed888;
+    color: #fff;
+    padding: 1em .5em;
+    margin: 0 .3em .3em 0;
+    border-bottom: none;
+    border-radius: 3px
+}
+
+span.iwrap>input+div>a:hover {
+    background-color: #53e891
+}
+
+span.iwrap>input:focus+div {
+    display: block
+}
+</style>
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+  var stripe = Stripe('<%= @stripe_publishable_key %>');
+
+window.addEventListener("load", function () {
+  function beewellAcquireCheckout() {
+    var XHR = new XMLHttpRequest();
+    var FD = new FormData(form);
+
+    XHR.addEventListener("load", function(event) {
+      beewellRedirectToCheckout("cs_live_AnDjUNhdfSVCGzmAI2c9o1NhZV9yLMAs4kacY7CTqK5XiXzUBDSgA7Wh#fidkdWxOYHwnPyd1blppbHNgWmd3Z2tuYH1ObG9ETGMwYn1Ma2kxRkdiZjU1TH9HV2F1bWInKSd3YGNgd3dgd0p3bGJsayc%2FJ21xcXV2PyoqZ2BgcmBpaSt8amJkJyknaGxhdic%2FfidicGxhJz8nS0QnKSdocGxhJz8nNGBgMWc0MmcoPWA1YSgxMmMwKGQ0YzQoMzMwYzY3NjFkNzdmJykndmxhJz8nYTNmZDY3ZDwoPGc2MSgxMDE1KGRkPTMoZ2BmN2BjPWNnPGY0J3gpJ2dgcWR2Jz9eWHgl");
+    });
+
+    XHR.addEventListener("error", function(event) {
+      alert('Oops! Something went wrong.');
+    });
+
+    XHR.open("POST", "/checkout");
+
+    XHR.send(FD);
+  }
+ 
+  var form = document.getElementById("contribute");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    beewellAcquireCheckout();
+  });
+});
+
+  function beewellRedirectToCheckout(checkoutSessionId) {
+  stripe.redirectToCheckout({
+    sessionId: checkoutSessionId
+  })
+  .then(function (result) {
+    if (result.error) {
+      var displayError = document.getElementById('error-message');
+      displayError.textContent = result.error.message;
+    }
+  });
+  }
+</script>
+
+<footer id="actionbar">
+<h2>Donate to  <strong>Bee Well Yoga</strong></h2>
+<form id="contribute" method="post" accept-charset="utf-8" autocomplete="off">
+<input type="hidden" name="name" value="Yoga Book Support">
+<label for="price">$ </label>
+<span class="iwrap"><input type="text" pattern="(\d*\.)?\d+" id="price" name="contribution" title="Enter a valid dollar amount." value="20" size="5"><div><a href="#" onmousedown="setPrice(20);">$20</a><a href="#" onmousedown="setPrice(50);">$50</a><a href="#" onmousedown="setPrice(100);">$100</a><a href="#" onmousedown="setPrice(250);">$250</a><a href="#" onmousedown="setPrice(500);">$500</a><a href="#" onmousedown="setPrice(1000);">$1000</a></div></span>
+<input type="submit" id="donatebtn" value="Donate" style="display: inline-block;">
 </form>
+</footer>
   

@@ -21,6 +21,8 @@
     <meta name="application-name" content="<%= @site_domain %>">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="csrf" content="<%= Plug.CSRFProtection.get_csrf_token() %>">
     
     <link rel="canonical" href="//<%= @site_domain %>">
     <link rel="mask-icon" href="https://can.<%= @site_domain %>/safari-pinned-tab.svg">
@@ -48,7 +50,7 @@
     <dd style="margin: 2px 0 4px 0;">Lifestyle focused on present moment awareness, embodiment, mental clarity, and liberation</dd>
     </dl>
   </footer>
-    <div style="text-align:center;margin:40px 0;">
+    <div style="text-align:center;margin:50px 0 200px;">
     <a href="mailto:ayla@beewell.yoga">ayla@beewell.yoga</a>
     </div>
   </body>

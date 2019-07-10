@@ -42,5 +42,7 @@ defmodule BeewellyogaWeb.Endpoint do
     key: "_beewellyoga_key",
     signing_salt: "0aUn091y"
 
+  plug CORSPlug, origin: "*"
+    
   plug BeewellyogaWeb.Router
 end
