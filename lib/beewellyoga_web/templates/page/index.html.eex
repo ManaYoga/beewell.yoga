@@ -164,7 +164,7 @@ window.addEventListener("load", function () {
     var FD = new FormData(form);
 
     XHR.addEventListener("load", function(event) {
-      beewellRedirectToCheckout("cs_live_AnDjUNhdfSVCGzmAI2c9o1NhZV9yLMAs4kacY7CTqK5XiXzUBDSgA7Wh#fidkdWxOYHwnPyd1blppbHNgWmd3Z2tuYH1ObG9ETGMwYn1Ma2kxRkdiZjU1TH9HV2F1bWInKSd3YGNgd3dgd0p3bGJsayc%2FJ21xcXV2PyoqZ2BgcmBpaSt8amJkJyknaGxhdic%2FfidicGxhJz8nS0QnKSdocGxhJz8nNGBgMWc0MmcoPWA1YSgxMmMwKGQ0YzQoMzMwYzY3NjFkNzdmJykndmxhJz8nYTNmZDY3ZDwoPGc2MSgxMDE1KGRkPTMoZ2BmN2BjPWNnPGY0J3gpJ2dgcWR2Jz9eWHgl");
+      beewellRedirectToCheckout(event.target.stripe_checkout_session_id);
     });
 
     XHR.addEventListener("error", function(event) {
