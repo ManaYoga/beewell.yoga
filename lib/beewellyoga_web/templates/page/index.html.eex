@@ -161,10 +161,12 @@ span.iwrap>input:focus+div {
 window.addEventListener("load", function () {
   function beewellAcquireCheckout() {
     var XHR = new XMLHttpRequest();
+    XHR.responseType = "json";
     var FD = new FormData(form);
 
     XHR.addEventListener("load", function(event) {
-      beewellRedirectToCheckout(event.target.stripe_checkout_session_id);
+    console.log(event.target);
+      beewellRedirectToCheckout(event.target.response.stripe_checkout_session_id);
     });
 
     XHR.addEventListener("error", function(event) {
@@ -194,17 +196,18 @@ window.addEventListener("load", function () {
       var displayError = document.getElementById('error-message');
       displayError.textContent = result.error.message;
     }
-  });
+  });   
   }
 </script>
 
 <footer id="actionbar">
-<h2>Donate to  <strong>Bee Well Yoga</strong></h2>
+<h2>Donate to Bee Well's <strong>yoga book for prisons</strong></h2>
 <form id="contribute" method="post" accept-charset="utf-8" autocomplete="off">
 <input type="hidden" name="name" value="Yoga Book Support">
 <label for="price">$ </label>
 <span class="iwrap"><input type="text" pattern="(\d*\.)?\d+" id="price" name="contribution" title="Enter a valid dollar amount." value="20" size="5"><div><a href="#" onmousedown="setPrice(20);">$20</a><a href="#" onmousedown="setPrice(50);">$50</a><a href="#" onmousedown="setPrice(100);">$100</a><a href="#" onmousedown="setPrice(250);">$250</a><a href="#" onmousedown="setPrice(500);">$500</a><a href="#" onmousedown="setPrice(1000);">$1000</a></div></span>
 <input type="submit" id="donatebtn" value="Donate" style="display: inline-block;">
+<span id="error-message"></span>
 </form>
 </footer>
   
