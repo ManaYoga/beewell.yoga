@@ -199,7 +199,7 @@ window.addEventListener("load", function () {
   }
   
   function setPrice(price) {
-        document.getElementById("price").setAttribute("value",amt);
+        document.getElementById("price").setAttribute("value",price);
         document.getElementById("donatebtn").focus();
     }
 </script>
