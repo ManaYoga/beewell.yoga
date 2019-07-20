@@ -26,9 +26,9 @@
     
     <link rel="canonical" href="//<%= @site_domain %>">
     <link rel="mask-icon" href="https://can.<%= @site_domain %>/safari-pinned-tab.svg">
-    <link href="https://can.<%= @site_domain %>/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.min.css" rel="stylesheet" type="text/css" media="all">
   </head>
-  <body>
+  <body style="text-align: center;">
     
     <style>
     a[href^='mailto']::before {
@@ -36,7 +36,7 @@
     }
     </style>
 
-  <main style="font-size: 1.2em; text-align: center; line-height:1.618;min-height:50vh;">
+  <main style="font-size: 1.2em; line-height:1.2;min-height:50vh;">
   <%= render @view_module, @view_template, assigns %>
   </main>
   
@@ -50,8 +50,12 @@
     <dd style="margin: 2px 0 4px 0;">Lifestyle focused on present moment awareness, embodiment, mental clarity, and liberation</dd>
     </dl>
   </footer>
-    <div style="text-align:center;margin:50px 0 200px;">
+    <div style="margin:50px 0;">
     <a href="mailto:ayla@beewell.yoga">ayla@beewell.yoga</a>
     </div>
+    
+    <div style="margin: 50px 0 200px;">
+    <h1><%= Money.new(@stripe_payments_total) %></h1>
+    out of <strong><%= Money.new(@fundraising_goal) %></strong> raised so far!</div>
   </body>
 </html>

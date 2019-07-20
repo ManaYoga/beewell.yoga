@@ -19,6 +19,8 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+config :money,
+  default_currency: :USD
 
 config :stripity_stripe, api_key: System.get_env("STRIPE_SECRET")
 
