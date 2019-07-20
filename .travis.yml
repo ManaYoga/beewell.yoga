@@ -13,6 +13,14 @@ script:
   - gigalixir config:set STRIPE_SECRET=$STRIPE_SECRET -a $GIGALIXIR_APP_NAME
   - gigalixir git:remote $GIGALIXIR_APP_NAME
   - git push -f gigalixir HEAD:refs/heads/master
+after_success:
+  - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
+  - chmod +x send.sh
+  - ./send.sh success $WEBHOOK_URL
+after_failure:
+  - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
+  - chmod +x send.sh
+  - ./send.sh failure $WEBHOOK_URL
 language: elixir
 elixir: 1.5.1
 otp_release: 20.0
