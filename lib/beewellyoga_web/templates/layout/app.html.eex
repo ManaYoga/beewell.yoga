@@ -57,8 +57,9 @@
     <a href="mailto:ayla@beewell.yoga">ayla@beewell.yoga</a>
     </div>
     
-    <div style="margin: 50px 0 200px;">
+    <div style="margin: 50px 0 240px; line-height: 2.4em;">
     <h1><%= Money.new(@stripe_payments_total) %></h1>
-    out of <strong><%= Money.new(@fundraising_goal) %></strong> raised so far!</div>
+    <p>out of <strong><%= Money.new(@fundraising_goal) %></strong> raised so far by</p>
+    <h1><%= @backer_count %> backers</h1></div>
   </body>
 </html>
