@@ -31,6 +31,9 @@
   <body style="text-align: center;background-color: #000000; color: #F5C962;">
     
     <style>
+      a {color: #4ed888;}
+      a:hover {color: #6ef8A8;}
+      a:visited {color: #4ed888;}
     a[href^='mailto']::before {
       content: '💌 ';
     }
