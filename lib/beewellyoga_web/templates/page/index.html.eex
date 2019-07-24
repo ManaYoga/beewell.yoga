@@ -50,7 +50,7 @@
 
 #actionbar input[type=text]:focus {
     outline: none;
-    box-shadow: 0 0 6px #53e891
+    box-shadow: 0 0 6px #a892a8
 }
 
 #actionbar input[type=text]:invalid {
@@ -65,28 +65,28 @@
     text-transform: uppercase;
     font-weight: 600;
     color: rgba(255,255,255,.8);
-    background-color: #4ed888;
+    background-color: #c8a2c8;
     border: none;
     border-radius: 4px;
-    box-shadow: 0 .15em #379960;
+    box-shadow: 0 .15em #a892a8;
     padding: .2em .5em .15em;
     cursor: pointer
 }
 
 #actionbar input[type=submit]:hover {
-    background-color: #53e891
+    background-color: #e8c2e8
 }
 
 #actionbar input[type=submit]:focus {
     outline: none;
-    background-color: #53e891
+    background-color: #e8c2e8
 }
 
 #actionbar input[type=submit]:active {
     outline: none;
     top: .1em;
     top: calc(.1em - 1px);
-    box-shadow: 0 .05em #379960
+    box-shadow: 0 .05em #a892a8
 }
 
 span.iwrap {
@@ -104,7 +104,7 @@ span.iwrap>input+div {
     bottom: 115%;
     padding: .3em 0 0 .3em;
     font-size: .75em;
-    background: #379960;
+    background: #a892a8;
     border-radius: 6px
 }
 
@@ -117,7 +117,7 @@ span.iwrap>input+div::before {
     left: calc(50% - .75em);
     width: 0;
     height: 0;
-    border-top: .75em solid #379960;
+    border-top: .75em solid #a892a8;
     border-left: .75em solid transparent;
     border-right: .75em solid transparent
 }
@@ -135,7 +135,7 @@ span.iwrap>input+div>a {
     width: 46%;
     width: calc(50% - .3em);
     float: left;
-    background: #4ed888;
+    background: #c8a2c8;
     color: #fff;
     padding: 1em .5em;
     margin: 0 .3em .3em 0;
@@ -144,7 +144,7 @@ span.iwrap>input+div>a {
 }
 
 span.iwrap>input+div>a:hover {
-    background-color: #53e891
+    background-color: #e8c2e8;
 }
 
 span.iwrap>input:focus+div {
