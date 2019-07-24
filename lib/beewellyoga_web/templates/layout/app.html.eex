@@ -28,7 +28,7 @@
     <link rel="mask-icon" href="https://can.<%= @site_domain %>/safari-pinned-tab.svg">
     <link href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.min.css" rel="stylesheet" type="text/css" media="all">
   </head>
-  <body style="text-align: center;">
+  <body style="text-align: center;background-color: #000000; color: #F5C962;">
     
     <style>
     a[href^='mailto']::before {
