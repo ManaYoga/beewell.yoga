@@ -3,25 +3,25 @@ defmodule BeewellyogaWeb.PageController do
 
   def index(conn, _params) do
     {:ok, customer_list} = Stripe.Customer.list(%{limit: 100})
-    customer_count = length(customer_list.data) + 2
+    customer_count = length(customer_list.data) + 3
     {:ok, balance_transactions} = Stripe.BalanceTransaction.all(%{type: "charge", limit: 100})
-    balance = Enum.reduce(balance_transactions.data, 0, fn x, acc -> x.amount + acc end) + 199100
+    balance = Enum.reduce(balance_transactions.data, 0, fn x, acc -> x.amount + acc end) + 214100
     render(conn, "index.html", site_domain: "beewell.yoga", stripe_publishable_key: "pk_live_brbnkexKijAIf5gxInl4CBgc00IzBRdphg", stripe_payments_total: balance, fundraising_goal: 1500000, backer_count: customer_count)
   end
 
   def success(conn, _params) do
     {:ok, customer_list} = Stripe.Customer.list(%{limit: 100})
-    customer_count = length(customer_list.data) + 2
+    customer_count = length(customer_list.data) + 3
     {:ok, balance_transactions} = Stripe.BalanceTransaction.all(%{type: "charge", limit: 100})
-    balance = Enum.reduce(balance_transactions.data, 0, fn x, acc -> x.amount + acc end) + 199100
+    balance = Enum.reduce(balance_transactions.data, 0, fn x, acc -> x.amount + acc end) + 214100
     render(conn, "success.html", site_domain: "beewell.yoga", stripe_payments_total: balance, fundraising_goal: 1500000, backer_count: customer_count)
   end
 
   def canceled(conn, _params) do
     {:ok, customer_list} = Stripe.Customer.list(%{limit: 100})
-    customer_count = length(customer_list.data) + 2
+    customer_count = length(customer_list.data) + 3
     {:ok, balance_transactions} = Stripe.BalanceTransaction.all(%{type: "charge", limit: 100})
-    balance = Enum.reduce(balance_transactions.data, 0, fn x, acc -> x.amount + acc end) + 199100
+    balance = Enum.reduce(balance_transactions.data, 0, fn x, acc -> x.amount + acc end) + 214100
     render(conn, "canceled.html", site_domain: "beewell.yoga", stripe_payments_total: balance, fundraising_goal: 1500000, backer_count: customer_count)
   end
 
