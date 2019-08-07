@@ -11,7 +11,7 @@ use Mix.Config
 # before starting your production server.
 config :beewellyoga, BeewellyogaWeb.Endpoint,  
   load_from_system_env: true,
-  http: [port: {:system, "PORT"}], # Needed for Phoenix 1.2 and 1.4. Doesn't hurt for 1.3.
+  http: [port: {:system, "PORT"}, protocol_options: [onresponse: &BeewellyogaWeb.Endpoint.on_response/4]],
   server: true, # Without this line, your app will not start the web server!
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
   url: [host: System.get_env("APP_NAME") <> ".gigalixir.com", port: 443],

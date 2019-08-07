@@ -1,6 +1,10 @@
 defmodule BeewellyogaWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :beewellyoga
 
+  def on_response(status, headers, body, request) do
+    {status, List.keydelete(headers, "server", 0), request}
+  end
+
   socket "/socket", BeewellyogaWeb.UserSocket,
     websocket: true,
     longpoll: false

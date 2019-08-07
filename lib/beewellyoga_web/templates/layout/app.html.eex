@@ -2,46 +2,70 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Ayla Bee Well</title>
+    <title><%= @site_title %></title>
     
-    <meta name="author" content="Ayla Bee">
-    <meta name="description" content="Ayla Benjamin is a creative visionary, experienced yoga teacher, meditation evangelist, prolific speaker, social justice driven entrepreneur, and lifelong student">
+    <meta name="author" content="<%= @site_author %>">
+    <meta name="description" content="<%= @site_description %>">
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="<%= @site_domain %>">
+    <meta name="apple-mobile-web-app-title" content="<%= @site_title %>">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
 
-    <link rel="apple-touch-icon" sizes="120x120" href="https://can.<%= @site_domain %>/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://can.<%= @site_domain %>/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://can.<%= @site_domain %>/favicon-16x16.png">
-    <link rel="manifest" href="https://can.<%= @site_domain %>/manifest.json">
-    <meta name="application-name" content="<%= @site_domain %>">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://can.<%= @site_address %>/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://can.<%= @site_address %>/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://can.<%= @site_address %>/favicon-16x16.png">
+    <link rel="manifest" href="https://can.<%= @site_address %>/manifest.json">
+    <meta name="application-name" content="<%= @site_title %>">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="csrf" content="<%= Plug.CSRFProtection.get_csrf_token() %>">
     
-    <link rel="canonical" href="//<%= @site_domain %>">
-    <link rel="mask-icon" href="https://can.<%= @site_domain %>/safari-pinned-tab.svg">
+    <link rel="canonical" href="//<%= @site_address %>">
+    <link rel="mask-icon" href="https://can.<%= @site_address %>/safari-pinned-tab.svg">
     <link href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.min.css" rel="stylesheet" type="text/css" media="all">
-  </head>
-  <body style="text-align: center;background-color: #000000; color: #F5C962;">
     
     <style>
       a {color: #4ed888;}
       a:hover {color: #6ef8A8;}
       a:visited {color: #4ed888;}
-    a[href^='mailto']::before {
-      content: '💌 ';
-    }
+      a[href^='mailto']::before {
+        content: '💌 ';
+      }
+      body {text-align: center;background-color: #000000; color: #F5C962; 
+        margin: 0;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;}
     </style>
 
-  <main style="font-size: 1.2em; line-height:1.2;min-height:50vh;">
-  <%= render @view_module, @view_template, assigns %>
-  </main>
+    <script>
+      // Load and register pre-caching Service Worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js', {
+            scope: '/',
+          });
+        });
+      }
+    </script>
+
+  </head>
+  <body>
+    <zv-z appDescription="<%= @site_description %>" appAuthor="<%= @site_author %>" appTitle="<%= @site_title %>" appAddress="<%= @site_address %>" unresolved></zv-z>
+    <noscript>
+      <h1><%= @site_title %></h1>
+      <h2>By <em><%= @site_author %></em></h2>
+      <p><%= @site_description %></p>
+      <pre>Made for <%= @site_address %></pre>
+      <p><strong>Uses Javascript for content delivery, not for spying! Please whitelist this site to connect.</strong></p>
+    </noscript>
+    <!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
+    <script src="/webcomponents-loader.js"></script>
+    <!-- Built with love using ZVZ -->
+    <script type="module" src="z-v-z.js"></script>
   
   <footer style="font-size: .8em; line-height:1.618; border: 1px white solid; padding: 8px 20px;">
     <dl>

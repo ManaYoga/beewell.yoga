@@ -10,9 +10,14 @@ use Mix.Config
 # Configures the endpoint
 config :beewellyoga, BeewellyogaWeb.Endpoint,
   url: [host: "localhost"],
+  http: [protocol_options: [onresponse: &BeewellyogaWeb.Endpoint.on_response/4]],
   secret_key_base: "JjhydmoUZbqIohwjKdYnIFTvp4YkjwMSenPhehu3yYMxw+4eDxbsa7R/KC5CZiN/",
   render_errors: [view: BeewellyogaWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Beewellyoga.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: Beewellyoga.PubSub, adapter: Phoenix.PubSub.PG2],
+  site_title: System.get_env("SITE_TITLE", "Ayla Bee Well"),
+  site_address: System.get_env("SITE_ADDRESS", "beewell.yoga"),
+  site_description: System.get_env("SITE_DESCRIPTION", "Ayla Benjamin is a creative visionary, experienced yoga teacher, meditation evangelist, prolific speaker, social justice driven entrepreneur, and lifelong student"),
+  site_author: System.get_env("SITE_AUTHOR", "Ayla Bee")
 
 # Configures Elixir's Logger
 config :logger, :console,

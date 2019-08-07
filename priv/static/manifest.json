@@ -1,0 +1,14 @@
+{
+    "name": "NRG BEAM",
+    "short_name": "NRG BEAM",
+    "icons": [
+        {
+            "src": "android-chrome-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#080800",
+    "background_color": "#080800",
+    "display": "standalone"
+}
